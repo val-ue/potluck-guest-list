@@ -22,7 +22,7 @@ addGuestButton.addEventListener("click", function () {
       clearInput();
       updateGuestCount();
     }
-  });
+});
   
 const addGuest = function (guest) {
     const listItem = document.createElement("li");
@@ -47,7 +47,7 @@ const updateGuestCount = function () {
 };
 
 const assignItems = function () {
-    let potluckItems = [
+    const potluckItems = [
       "egg salad",
       "fruit salad",
       "bread bowl",
@@ -62,7 +62,7 @@ const assignItems = function () {
       "hot coffee"
     ];
   
-    let allGuests = document.querySelectorAll(".guest-list li");
+    const allGuests = document.querySelectorAll(".guest-list li");
   
     for (let guest of allGuests) {
       let randomPotluckIndex = Math.floor(Math.random() * potluckItems.length);
@@ -74,11 +74,10 @@ const assignItems = function () {
   
       potluckItems.splice(randomPotluckIndex, 1);
     }
-  
-    assignButton.disabled = true;
 };
   
 assignButton.addEventListener("click", function () {
-    assignItems();
+  assignItems();
+  assignButton.disabled = true;
 });
   
